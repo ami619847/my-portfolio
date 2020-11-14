@@ -3,12 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import EmailIcon from "@material-ui/icons/Email";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import FacebookIcon from "@material-ui/icons/Facebook";
+import GitHubIcon from '@material-ui/icons/GitHub';
 // import BehanceIcon from "../images/behance.png";
-// import Contact from "./Contact";
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -47,28 +47,32 @@ export default function Footer() {
     <React.Fragment>
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
-          {/* <IconButton edge="start" color="inherit" aria-label="open drawer">
-            <MenuIcon />
-          </IconButton> */}
           <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-            <EmailIcon />
-            {/* <Contact /> */}
+            <a href="mailto:ami619847@gmail.com?subject=Mail%20from%20the%20website" >
+              <EmailIcon />
+            </a>
           </Fab>
+          <Typography variant="caption">
+            © Aryuna Poselenova
+          </Typography>
 
           {/* keeps the icons at the right corner, without - on the left */}
           <div className={classes.grow} />
           <IconButton color="inherit">
-            <EmailIcon />
+            <a href="https://www.linkedin.com/in/aryuna-poselenova-6b063521/" target="_blank">
+              <LinkedInIcon />
+            </a>
           </IconButton>
           <IconButton color="inherit">
-            <LinkedInIcon />
+            <a href="https://github.com/ami619847" target="_blank">
+              <GitHubIcon />
+            </a>
           </IconButton>
-          {/* <IconButton src={BehanceIcon} color="white"></IconButton> */}
-          <IconButton
-            //   edge="end"
-            color="inherit"
-          >
-            <FacebookIcon />
+          <IconButton color="inherit">
+            <a style={{ textDecoration: 'none' }} href="mailto:ami619847@gmail.com?subject=Mail%20from%20the%20website" >
+              {/* <IconButton src={BehanceIcon} color="white"></IconButton> */}
+              <EmailIcon />
+            </a>
           </IconButton>
         </Toolbar>
       </AppBar>

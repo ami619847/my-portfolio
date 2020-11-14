@@ -29,7 +29,7 @@ export default function SimpleMenu() {
       <IconButton
         // edge="start"
         // className={classes.menuButton}
-        // color="inherit"
+        color="inherit"
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
@@ -44,7 +44,7 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Link href="/home" color="inherit">
+        <Link href="/" color="inherit">
           <MenuItem onClick={handleClose}>Home</MenuItem>
         </Link>
         <Link href="/about" color="inherit">

@@ -2,10 +2,17 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
-// import tileData from "./tileData";
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Link from '@material-ui/core/Link';
+// import Button from '@material-ui/core/Button';
 import Typography from "@material-ui/core/Typography";
-import profile from "../images/about_profile.jpg";
+import { devData, uxData} from "../files/portfolio_data";
+// import profile from "../files/about_profile.jpg";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,36 +23,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
+    height: 400,
     width: 800,
-    height: 450,
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
   },
-  titleBar: {
-    background:
-      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, " +
-      "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+  card: {
+    maxWidth: 345,
   },
 }));
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *     featured: true,
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
 export default function AdvancedGridList() {
   const classes = useStyles();
 
@@ -54,65 +40,86 @@ export default function AdvancedGridList() {
       <Typography variant="h4" gutterBottom>
         Portfolio
       </Typography>
-      <div className={classes.root}>
-        {/* <GridList cellHeight={200} spacing={1} className={classes.gridList}>
-        {tileData.map((tile) => (
-          <GridListTile
-            key={tile.img}
-            cols={tile.featured ? 3 : 2}
-            rows={tile.featured ? 3 : 2}
-          >
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              titlePosition="top"
-              
-              actionPosition="left"
-              className={classes.titleBar}
-            />
-          </GridListTile>s
-        ))}
-      </GridList> */}
 
-        <GridList spacing={3} className={classes.gridList} cols={3}>
-          <GridListTile>
-            <img src={profile} alt="about_profile" />
-            <GridListTileBar
-              title="project 1"
-              titlePosition="bottom"
-              // actionPosition="right"
-              className={classes.titleBar}
-            />
-          </GridListTile>
-          <GridListTile>
-            <img src={profile} alt="about_profile" />
-            <GridListTileBar
-              title="project 2"
-              titlePosition="bottom"
-              actionPosition="right"
-              className={classes.titleBar}
-            />
-          </GridListTile>
-          <GridListTile>
-            <img src={profile} alt="about_profile" />
-            <GridListTileBar
-              title="project 3"
-              titlePosition="bottom"
-              actionPosition="right"
-              className={classes.titleBar}
-            />
-          </GridListTile>
-          <GridListTile>
-            <img src={profile} alt="about_profile" />
-            <GridListTileBar
-              title="project 4"
-              titlePosition="bottom"
-              actionPosition="right"
-              className={classes.titleBar}
-            />
-          </GridListTile>
+      <Typography variant="h5" gutterBottom>
+        User Experience Projects
+      </Typography>
+
+      <div className={classes.root}>  
+        <GridList cellHeight={280} cols={3} spacing={5} className={classes.gridList}>
+          {uxData.map((project) => (
+            <GridListTile 
+              key={project.img} 
+              cols={project.featured ? 2 : 1} 
+              rows={project.featured ? 2 : 1}
+            >
+              <Card className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt={project.title} 
+                    height="140"
+                    image={project.image}
+                    title={project.title}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="h2">
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      {project.description}. <Link href="#">See more</Link>
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                {/* <CardActions>
+                  <Button size="small" color="primary">
+                    See code
+                  </Button>
+                </CardActions> */}
+              </Card>  
+            </GridListTile>
+          ))}
         </GridList>
       </div>
+
+      <Typography variant="h5" gutterBottom>
+        Web Development Projects
+      </Typography>
+
+      <div className={classes.root}>        
+        <GridList cellHeight={280} cols={3} spacing={5} className={classes.gridList}>
+          {devData.map((project) => (
+            <GridListTile 
+              key={project.img} 
+              cols={project.featured ? 2 : 1} 
+              rows={project.featured ? 2 : 1}
+            >
+              <Card className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt={project.title} 
+                    height="140"
+                    image={project.image}
+                    title={project.title}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="h2">
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      {project.description}. <Link href={ project.url } target="_blank">See code</Link>
+                    </Typography>
+                    {/* <Divider variant="inset"/>
+                    {project.technology} */}
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </GridListTile>
+          ))}
+        </GridList>
+      </div>
+
     </div>
   );
 }

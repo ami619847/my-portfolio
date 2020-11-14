@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import profile from "../images/about_profile.jpg";
+import profile from "../files/about_profile.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
