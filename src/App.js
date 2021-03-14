@@ -1,58 +1,45 @@
 import React from "react";
-// import logo from "./logo.svg";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
-import Navbar from "././components/Navbar";
-import Home from "././components/Home";
-import Portfolio from "././components/Portfolio";
-import About from "././components/About";
-import Contact from "././components/Contact";
-import Footer from "././components/Footer";
-// import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { createMuiTheme, ThemeProvider, CssBaseline } from "@material-ui/core";
 
-function App() {
+export default function App() {
+  const theme = createMuiTheme({
+    palette: {
+      background:{ 
+        default: '#f7f5f2',
+        paper: '#f7f5f2', 
+      },
+      primary: {
+        main: '#b67150',
+      },
+      secondary: {
+        main: "#b67150"
+      },
+    },
+    typography: {
+      fontFamily: "'Montserrat', sans-serif",
+      textTransform: "none",
+    },
+    button: {
+      textTransform: "none",
+    },
+  });
+
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          <Navbar />
-          {/* <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a> */}
-        </header>
-
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/home" render={() => <Redirect to="/" />} />
-          <Route exact path="/portfolio">
-            <Portfolio />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
+    <ThemeProvider theme={theme} >
+      <CssBaseline />
+        <head>
+          <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+          <link rel="manifest" href="./favicon/site.webmanifest" />
+          <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5" />
+          <meta name="msapplication-TileColor" content="#da532c" />
+          <meta name="theme-color" content="#ffffff" />
+        </head>
+        <Navbar />
         <Footer />
-      </div>
-    </Router>
+    </ThemeProvider>
   );
-}
-
-export default App;
+};

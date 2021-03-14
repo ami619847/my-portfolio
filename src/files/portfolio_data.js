@@ -1,37 +1,41 @@
-export const devData = [
+export const data = [
+    // {
+    //     title: "Weather App",
+    //     type: "Web Development",
+    //     description: "Simple weather application with data coming from API",
+    //     technology: "React TS, Material UI",
+    //     // image: "",
+    //     url: "#",
+    // },
+    // {
+    //     title: "Invoice App",
+    //     type: "Web Development",
+    //     description: "Front-end invoice dashboard application for generating invoices with QR scan compitability",
+    //     technology: "React JS, Material UI",
+    //     // image: "",
+    //     url: "#",
+    // },
     {
         title: "Uber for Tickets App",
-        description: "Selling tickets full-stack app ",
-        technology: "React/Redux JS, TypeScript",
+        type: "Web Development",
+        description: "Full-stack selling tickets application with a user log-in/log-out option",
+        technology: "React/Redux JS, TypeScript, PostgreSQL, Material UI",
         // image: "",
         url: "https://github.com/ami619847/Uber-for-tickets-app",
     },
     {
         title: "Pizza Delivery App",
-        description: "Simple pizza app with delivery option",
+        type: "Web Development",
+        description: "Simple pizza application with a delivery option",
         technology: "React/Redux JS",
         // image: "",
         url: "https://github.com/ami619847/Pizza-app",
     }, 
-]
-
-export const uxData = [
     {
-        title: "Art Wind website",
-        description: "Online Gallery rebranding and website",
-        technology: "Adobe XD"
-        // image: "",
+        title: "Hangman Game",
+        type: "Web Development",
+        technology: "React/Redux JS",
+        image: "https://github.com/ami619847/Hangman-game/blob/master/src/images/Screenshot.png?raw=true",
+        url: "https://github.com/ami619847/Hangman-game",
     }, 
-   {
-        title: "Gallery App",
-        description: "AR app for placing posters",
-        technology: "Adobe XD and Aero"
-        // image: "",
-    },
-   {
-        title: "Project 3",
-        description: "Short description",
-        technology: "Figma"
-        // image: "",
-    }
 ]
