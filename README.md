@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Portfolio
 
-## Available Scripts
+![Version](https://img.shields.io/badge/version-0.2.0-blue)
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-latest-brightgreen?logo=vite)
+![Material-UI](https://img.shields.io/badge/MUI-7.3.5-007FFF?logo=mui)
 
-In the project directory, you can run:
+Personal portfolio website of **Aryuna Poselenova**, showcasing skills, projects, and contact information in a clean, responsive design.
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Changelog (v0.1.0 → v0.2.0)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Upgraded React 16 → 19
+- Upgraded Material-UI v4 → v7.3.5  
+- Migrated project from CRA to Vite  
+- Fixed Grid layout issues (removed deprecated props `item`, `justify`)  
+- React 18 root rendering updated (`createRoot`)  
+- Fully compatible with Vite + MUI + React 19
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Responsive **About**, **Portfolio**, and **Contact** pages
+- Projects dynamically rendered from `portfolio_data.js`
+- Minimalistic design using MUI v7
+- Contact email link functional
+- Deployed with GitHub Pages
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/ami619847/my-portfolio.git
+cd my-portfolio
+npm install
+npm run dev
+```
 
-### `npm run eject`
+Open in browser: http://localhost:5173
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Deployment
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+npm run deploy
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project Structure
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+src/
+ ├─ components/   # About, Contact, Footer, Navbar, Portfolio, Project
+ ├─ files/        # portfolio_data.js, images
+ ├─ App.jsx
+ └─ main.jsx
+public/
+ ├─ favicon/
+ └─ manifest.json
