@@ -1,0 +1,32 @@
+<svg width="780" height="310" viewBox="0 0 780 310" xmlns="http://www.w3.org/2000/svg">
+  <!-- Start timer -->
+  <rect x="40" y="20" width="200" height="60" fill="#e8e6e3" rx="8"/>
+  <text x="140" y="55" text-anchor="middle" font-family="Montserrat" font-size="14">
+    Start Ad Timer
+  </text>
+
+  <line x1="240" y1="50" x2="350" y2="50" stroke="#555" stroke-width="2"/>
+  <polygon points="350,50 340,45 340,55" fill="#555"/>
+
+  <!-- Timer running -->
+  <rect x="350" y="20" width="200" height="60" fill="#e8e6e3" rx="8"/>
+  <text x="450" y="55" text-anchor="middle" font-family="Montserrat" font-size="14">
+    Timer Running (2–3 mins)
+  </text>
+
+  <line x1="450" y1="80" x2="450" y2="130" stroke="#555" stroke-width="2"/>
+
+  <!-- Trigger ad -->
+  <rect x="350" y="130" width="200" height="60" fill="#e8e6e3" rx="8"/>
+  <text x="450" y="165" text-anchor="middle" font-family="Montserrat" font-size="14">
+    Show Interstitial Ad
+  </text>
+
+  <line x1="450" y1="190" x2="450" y2="230" stroke="#555" stroke-width="2"/>
+
+  <!-- Reset -->
+  <rect x="350" y="230" width="200" height="60" fill="#e8e6e3" rx="8"/>
+  <text x="450" y="265" text-anchor="middle" font-family="Montserrat" font-size="14">
+    Reset Timer → Repeat
+  </text>
+</svg>

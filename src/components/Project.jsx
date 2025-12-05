@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function Project({ project }) {
   return (
@@ -19,7 +20,12 @@ export default function Project({ project }) {
           {project.title}
         </Typography>
         <Typography variant="body2" component="p">
-          {project.description}
+          {project.description.split("\n").map((line, index) => (
+            <span key={index}>
+              {line}
+              <br />
+            </span>
+          ))}
         </Typography>
         {project.image ? <Link href={project.url} target="_blank">
           <CardMedia
@@ -33,7 +39,13 @@ export default function Project({ project }) {
         </Link> : null}
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }}>
-        <Button
+        {project.type === "Case Study" ? <Button
+          component={RouterLink}
+          to={project.url}
+          sx={{ textTransform: 'none' }}
+        >
+          View Case Study
+        </Button> : <Button
           size="small"
           href={project.url}
           target="_blank"
@@ -42,6 +54,7 @@ export default function Project({ project }) {
         >
           View Code
         </Button>
+        }
       </CardActions>
     </Card>
   );
