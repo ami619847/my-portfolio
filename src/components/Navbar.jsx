@@ -12,6 +12,7 @@ export default function Navbar() {
 
   // Map paths to tab index
   const pathToIndex = {
+    "": 0,
     "/": 0,
     "/projects": 1,
     "/contact": 2,
@@ -25,7 +26,7 @@ export default function Navbar() {
         <Toolbar>
           <Box
             component={RouterLink}
-            to="/"
+            to=""
             sx={{
               textDecoration: "none",
               display: "flex",
@@ -43,19 +44,19 @@ export default function Navbar() {
               sx={{ textTransform: "none" }}
               label="About"
               component={RouterLink}
-              to="/"
+              to=""
             />
             <Tab
               sx={{ textTransform: "none" }}
               label="Projects"
               component={RouterLink}
-              to="/projects"
+              to="projects"
             />
             <Tab
               sx={{ textTransform: "none" }}
               label="Contact"
               component={RouterLink}
-              to="/contact"
+              to="contact"
             />
           </Tabs>
         </Toolbar>

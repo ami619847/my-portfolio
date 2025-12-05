@@ -32,7 +32,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme} >
       <CssBaseline />
-      <BrowserRouter>
+      <BrowserRouter basename="/my-portfolio">
         <Navbar />
         <Routes>
           <Route path="/" element={<About />} />

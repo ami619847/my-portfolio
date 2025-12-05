@@ -1,11 +1,13 @@
+import integrationFlowDiagram from "../diagrams/integration-flow.svg";
+
 export const data = [
     {
         title: "SDK Game Integration Case Study",
         type: "Case Study",
         description: "Integrated a web-based Ads SDK into HTML5 games,\nhandling reward events, error states, and multiple\nad formats to ensure seamless gameplay and monetization.",
         technology: "HTML5, CSS, JavaScript/TypeScript, Node.js",
-        image: "src/diagrams/integration-flow.svg",
-        url: "/projects/game-integration-case-study?",
+        image: integrationFlowDiagram,
+        url: "game-integration-case-study",
     }, 
     {
         title: "Uber for Tickets App",
