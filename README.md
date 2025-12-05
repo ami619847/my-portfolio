@@ -9,14 +9,19 @@ Personal portfolio website of **Aryuna Poselenova**, showcasing skills, projects
 
 ---
 
-## Changelog (v0.1.0 → v0.2.0)
+## Changelog 
 
+### (v0.1.0 → v0.2.0)
 - Upgraded React 16 → 19
 - Upgraded Material-UI v4 → v7.3.5  
 - Migrated project from CRA to Vite  
 - Fixed Grid layout issues (removed deprecated props `item`, `justify`)  
 - React 18 root rendering updated (`createRoot`)  
 - Fully compatible with Vite + MUI + React 19
+
+### (v0.2.0 → v0.2.1)
+- Added pagination with React router
+- Added game integration case study
 
 ---
 
@@ -48,10 +53,13 @@ npm run build
 npm run deploy
 ```
 
+See deployed [page](https://ami619847.github.io/my-portfolio).
+
 ## Project Structure
 
 src/
- ├─ components/   # About, Contact, Footer, Navbar, Portfolio, Project
+ ├─ components/   # About, Contact, Footer, Navbar, Portfolio, Project, GameIntegrationCaseStudy
+ ├─ diagrams/     # ad-flow.svg, ad-timer.svg, integration-flow.svg  
  ├─ files/        # portfolio_data.js, images
  ├─ App.jsx
  └─ main.jsx
